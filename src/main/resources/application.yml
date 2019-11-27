@@ -1,0 +1,22 @@
+
+spring:
+  application:
+    name: eureka
+  security: 
+#    basic:  
+#      enable: true #开启基于HTTP basic的认证
+    user: #配置用户的账号信息
+      name: kaiyuan
+      password: kaiyuan123
+      
+server:
+  port: 8761
+eureka:
+  client:
+    register-with-eureka: false 
+    fetch-registry: false
+    service-url:
+      defaultZone:  http://kaiyuan:kaiyuan123@127.0.0.1:8761/eureka/   #eureka注册中心地址
+  server:
+    enable-self-preservation: false  #关闭自我保护机制，实际生产环境时建议不要关闭
+#    eviction-interval-timer-in-ms: 4000
